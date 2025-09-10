@@ -21,22 +21,22 @@
   <meta name="google-site-verification" content="Rw9r8gjvZbSQ1DtW1dUyVpfYYKR2rGYFJ_mqHwqmUP4" />
   <meta name="msvalidate.01" content="9F49583CAEC3FD61EBED6F8A856AEC4A" />
   
-    <meta name="description" content="Agent概念  基础： Transformer 特征： 大参数 1750B, 大数据 效果:  涌现 20B以后出现的飞跃  微软一篇论文称chatgpt只有20B量级参数   AGI 通用人工智能   LLM面向任务, 而LLM支持的Agent面向环境  记忆 规划 工具使用 互动 互动包括与环境,Agent和人类   场景:  单Agent 多Agent: 合作, 辩论  MIT googl">
+    <meta name="description" content="graph TD     A[车路协同云控平台] --&gt;|全局调度, 高精地图, 数据分析| B(&quot;融合通信网络: 5G+V2X+卫星&quot;)     B --&gt;|&quot;V2N (云网交互)&quot;| C[车载单元 OBU]     B --&gt;|&quot;I2N (路网交互)&quot;| D[路侧单元 RSU]     C --&gt;|&quot;V2V (车车直连)&quot;| E[其他网联车辆]     D --&gt;|&quot;V2I (车路直连)&quot;|">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Agent">
-<meta property="og:url" content="http://zqizhang.github.io/2023/10/07/Agent/index.html">
+<meta property="og:title" content="SAD paper reading 1">
+<meta property="og:url" content="http://zqizhang.github.io/2025/09/02/111/index.html">
 <meta property="og:site_name" content="王珣 の Blog">
-<meta property="og:description" content="Agent概念  基础： Transformer 特征： 大参数 1750B, 大数据 效果:  涌现 20B以后出现的飞跃  微软一篇论文称chatgpt只有20B量级参数   AGI 通用人工智能   LLM面向任务, 而LLM支持的Agent面向环境  记忆 规划 工具使用 互动 互动包括与环境,Agent和人类   场景:  单Agent 多Agent: 合作, 辩论  MIT googl">
+<meta property="og:description" content="graph TD     A[车路协同云控平台] --&gt;|全局调度, 高精地图, 数据分析| B(&quot;融合通信网络: 5G+V2X+卫星&quot;)     B --&gt;|&quot;V2N (云网交互)&quot;| C[车载单元 OBU]     B --&gt;|&quot;I2N (路网交互)&quot;| D[路侧单元 RSU]     C --&gt;|&quot;V2V (车车直连)&quot;| E[其他网联车辆]     D --&gt;|&quot;V2I (车路直连)&quot;|">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-07T07:45:00.000Z">
-<meta property="article:modified_time" content="2023-11-28T13:56:26.000Z">
+<meta property="article:published_time" content="2025-09-02T06:44:00.000Z">
+<meta property="article:modified_time" content="2025-09-10T08:17:03.882Z">
 <meta property="article:author" content="Wang Xun">
-<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="paper">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Agent - 王珣 の Blog</title>
+  <title>SAD paper reading 1 - 王珣 の Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Agent"></span>
+            <span id="subtitle" data-typed-text="SAD paper reading 1"></span>
           
         </div>
 
@@ -228,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-07 15:45" pubdate>
-          2023年10月7日 下午
+        <time datetime="2025-09-02 14:44" pubdate>
+          2025年9月2日 下午
         </time>
       </span>
     
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          122 字
+          478 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -297,54 +297,66 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Agent</h1>
+            <h1 id="seo-header">SAD paper reading 1</h1>
             
             
               <div class="markdown-body">
                 
-                <h1>Agent概念</h1>
-<ul>
-<li>基础： Transformer</li>
-<li>特征： 大参数 1750B, 大数据</li>
-<li>效果:
-<ul>
-<li>涌现 20B以后出现的飞跃
-<ul>
-<li>微软一篇论文称chatgpt只有20B量级参数</li>
-</ul>
-</li>
-<li>AGI 通用人工智能</li>
-</ul>
-</li>
-<li>LLM面向任务, 而LLM支持的Agent面向环境
-<ul>
-<li>记忆 规划 工具使用 互动</li>
-<li>互动包括与环境,Agent和人类</li>
-</ul>
-</li>
-<li>场景:
-<ul>
-<li>单Agent</li>
-<li>多Agent: 合作, 辩论
-<ul>
-<li>MIT google发现辩论可以提高LLM的推理能力与准确率</li>
-</ul>
-</li>
-<li>人机互动</li>
-<li>智能体社会
-<ul>
-<li>Stanford的agent 小镇</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>GPT4 Trubo
-<ul>
-<li>上下文 128k</li>
-</ul>
-</li>
-</ul>
+                <pre><code class="mermaid">graph TD
+    A[车路协同云控平台] -->|全局调度, 高精地图, 数据分析| B("融合通信网络: 5G+V2X+卫星")
+    B -->|"V2N (云网交互)"| C[车载单元 OBU]
+    B -->|"I2N (路网交互)"| D[路侧单元 RSU]
+    C -->|"V2V (车车直连)"| E[其他网联车辆]
+    D -->|"V2I (车路直连)"| C
+    D -->|感知数据上传, 状态上报| A
+    F[自动驾驶系统] &lt;-->|协同信息, 控制指令| C
+    G[智能感知系统] &lt;-->|融合感知| C
+    H["行人/非机动车 (V2P)"] &lt;-->|信息交互| D
+    I["行人/非机动车 (V2P)"] &lt;-->|信息交互| C</code></pre>
+<pre><code class="mermaid">graph TD
+    subgraph "核心数据处理与应用流"
+        direction LR
+        C["C: V2X通信管理"] --> A["A: 协同感知与定位"]
+        A --> B["B: 数据融合与态势分析"]
+        C -.-> B;
+        B --> D["D: 协同决策与控制辅助"]
+        B --> E["E: 交通信息服务与预警"]
+    end
 
+    subgraph "系统支撑与管理"
+        direction TB
+        F["F: 系统安全管理"]
+        G["G: 远程监控与运维"]
+    end
+
+    F -.-> C; F -.-> A; F -.-> B; F -.-> D; F -.-> E;
+    G -.-> C; G -.-> A; G -.-> B; G -.-> D; G -.-> E;
+
+
+    subgraph "主要外部系统接口"
+        direction LR
+        C &lt;--> Ext_V2X["V2X网络&lt;br>(其他OBU/RSU/行人终端)"]
+        D &lt;--> Ext_ADS[车辆自动驾驶系统]
+        E --> Ext_HMI[车载HMI/用户应用]
+        G &lt;--> Ext_Cloud[云控平台]
+    end</code></pre>
+<figure><div class="code-wrapper"><pre class="line-numbers language-meimaid" data-language="meimaid"><code class="language-meimaid">sequenceDiagram
+    participant RSU as 路侧单元 (含信号灯控制器接口)
+    participant OBU_V1 as 环卫车A (请求通行)
+    participant OBU_V2 as 社会车辆B
+    participant Cloud as 云控平台
+
+    RSU -&gt;&gt; OBU_V1: 广播MAP消息 (路口拓扑) &amp; SPAT消息 (信号灯相位与配时)
+    OBU_V1 -&gt;&gt; RSU: 发送SSM消息 (车辆状态与通行请求)
+    alt 存在冲突风险
+        RSU -&gt;&gt; OBU_V2: 发送协作指令&#x2F;预警 (如避让环卫车A)
+        RSU -&gt;&gt; OBU_V1: 确认通行权&#x2F;建议等待
+    else 无冲突或优先权高
+        RSU -&gt;&gt; OBU_V1: 确认通行&#x2F;绿波引导速度
+    end
+    OBU_V1 -&gt;&gt; OBU_V1: 自动驾驶系统执行通行决策
+    OBU_V1 --&gt;&gt; Cloud: 上报通行事件数据
+    OBU_V2 --&gt;&gt; Cloud: 上报通行事件数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></figure>
                 
               </div>
             
@@ -377,7 +389,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+        <a href="/tags/paper/" class="print-no-link">#paper</a>
       
     </div>
   
@@ -389,8 +401,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Agent</div>
-      <div>http://zqizhang.github.io/2023/10/07/Agent/</div>
+      <div>SAD paper reading 1</div>
+      <div>http://zqizhang.github.io/2025/09/02/111/</div>
     </div>
     <div class="license-meta">
       
@@ -402,7 +414,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月7日</div>
+          <div>2025年9月2日</div>
         </div>
       
       
@@ -429,29 +441,6 @@
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2024/11/05/paper_reading/" title="detection paper reading 1">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">detection paper reading 1</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/10/07/csArch_lab/" title="计组实验_实现cache">
-                        <span class="hidden-mobile">计组实验_实现cache</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
