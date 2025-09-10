@@ -11,3 +11,4 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 Sitemap: http://zqizhang.github.io/sitemap.xml
+Sitemap: https://zqizhang.github.io/sitemap.xml
